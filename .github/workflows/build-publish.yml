@@ -62,7 +62,7 @@ jobs:
             WARP_VERSION=${{ steps.get-warp-client-version.outputs.WARP_VERSION }}
             COMMIT_SHA=${{ github.sha }}
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: |
             ${{ vars.REGISTRY }}/${{ vars.IMAGE_NAME }}:latest
