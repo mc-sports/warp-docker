@@ -52,7 +52,9 @@ fi
 if [ -n "$WARP_ENABLE_NAT" ]; then
     # switch to warp mode
     echo "[NAT] Switching to warp mode..."
-    warp-cli --accept-tos mode warp
+    if [ -n "$WARP_SKIP_MODE_SWITCH" ]; then
+        warp-cli --accept-tos mode warp
+    fi
     warp-cli --accept-tos connect
 
     # wait another seconds for the daemon to reconfigure
